@@ -108,8 +108,9 @@ pos_neg(-1, 1, False) → True
 pos_neg(-4, -5, True) → True
 """
 def pos_neg(a, b, negative):
-  if negative:
-    return a<0 and b<0
-  else:
-    return ((a<0 and b>0) or (b<0 and a>0))
+    if negative:
+        return a<0 and b<0
+    else:
+        return ((a<0 and b>0) or (b<0 and a>0))
    
+""""""

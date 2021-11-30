@@ -69,7 +69,7 @@ Given a string of even length, return the first half. So the string "WooHoo" yie
 
 
 def first_half(str):
-    return str[0 : len(str) / 2]
+    return str[: int(-len(str) / 2)]
 
 
 """
@@ -80,6 +80,24 @@ The string length will be at least 2.
 
 def without_end(str):
     return str[1 : len(str) - 1]
+
+
+"""
+Given 2 strings, a and b, return a string of the form short+long+short, 
+with the shorter string on the outside and the longer string on the inside. 
+The strings will not be the same length, but they may be empty (length 0).
+"""
+
+
+def combo_string(a, b):
+    if len(a) < len(b):
+        shorter = a
+        longer = b
+    else:
+        shorter = b
+        longer = a
+
+    return shorter + longer + shorter
 
 
 """

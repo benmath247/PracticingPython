@@ -46,3 +46,59 @@ the original string. The string length will be at least 2.
 def extra_end(str):
     last2 = str[-2:]
     return last2 * 3
+
+
+"""
+
+Given a string, return the string made of its first two chars, 
+so the String "Hello" yields "He". If the string is shorter than length 2, 
+return whatever there is, so "X" yields "X", and the empty string "" 
+yields the empty string "".
+"""
+
+
+def first_two(str):
+    if len(str) < 2:
+        return str
+    return str[:2]
+
+
+"""
+Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
+"""
+
+
+def first_half(str):
+    return str[0 : len(str) / 2]
+
+
+"""
+Given a string, return a version without the first and last char, so "Hello" yields "ell". 
+The string length will be at least 2.
+"""
+
+
+def without_end(str):
+    return str[1 : len(str) - 1]
+
+
+"""
+Given 2 strings, return their concatenation, except omit the first char of each. 
+The strings will be at least length 1.
+"""
+
+
+def non_start(a, b):
+    return a[1 : len(a)] + b[1 : len(b)]
+
+
+"""
+Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. 
+The string length will be at least 2.
+"""
+
+
+def left2(str):
+    first_part = str[0:2]
+    second_part = str[2:]
+    return second_part + first_part

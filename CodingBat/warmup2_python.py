@@ -7,8 +7,10 @@ string_times('Hi', 3) → 'HiHiHi'
 string_times('Hi', 1) → 'Hi'
 """
 
+
 def string_times(str, n):
     return str * n
+
 
 """
 Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars,
@@ -20,9 +22,10 @@ front_times('Chocolate', 3) → 'ChoChoCho'
 front_times('Abc', 3) → 'AbcAbcAbc'
 """
 
+
 def front_times(str, n):
     return str[0:3] * n
-  
+
 
 """
 Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
@@ -33,12 +36,14 @@ string_bits('Hi') → 'H'
 string_bits('Heeololeo') → 'Hello'
 """
 
+
 def string_bits(str):
     result = ""
     for i in range(len(str)):
         if i % 2 == 0:
             result += str[i]
     return result
+
 
 """
 Given a non-empty string like "Code" return a string like "CCoCodCode".
@@ -48,9 +53,11 @@ string_splosion('Code') → 'CCoCodCode'
 string_splosion('abc') → 'aababc'
 string_splosion('ab') → 'aab'
 """
+
+
 def string_splosion(str):
     result = ""
-    for i in range(len(str)+1):
+    for i in range(len(str) + 1):
         result += str[0:i]
     return result
 
@@ -63,18 +70,21 @@ last2('hixxhi') → 1
 last2('xaxxaxaxx') → 1
 last2('axxxaaxx') → 2
 """
+
+
 def last2(str):
     if len(str) < 2:
         return 0
-  
-    end = str[len(str)-2:len(str)]
+
+    end = str[len(str) - 2 : len(str)]
     result = 0
-  
-    for i in range(len(str)-2):
-        if str[i:i+2] == end:
+
+    for i in range(len(str) - 2):
+        if str[i : i + 2] == end:
             result += 1
-  
+
     return result
+
 
 """
 Given an array of ints, return the number of 9's in the array.
@@ -84,6 +94,7 @@ array_count9([1, 2, 9]) → 1
 array_count9([1, 9, 9]) → 2
 array_count9([1, 9, 9, 3, 9]) → 3
 """
+
 
 def array_count9(nums):
     result = 0
@@ -101,16 +112,19 @@ array_front9([1, 2, 9, 3, 4]) → True
 array_front9([1, 2, 3, 4, 9]) → False
 array_front9([1, 2, 3, 4, 5]) → False
 """
+
+
 def array_front9(nums):
     if len(nums) <= 4:
         num = len(nums)
     else:
         num = 4
-  
+
     for i in range(num):
         if nums[i] == 9:
             return True
     return False
+
 
 """
 Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere.
@@ -120,11 +134,14 @@ array123([1, 1, 2, 3, 1]) → True
 array123([1, 1, 2, 4, 1]) → False
 array123([1, 1, 2, 1, 2, 3]) → True
 """
+
+
 def array123(nums):
-    for i in range(len(nums)-2):
-        if nums[i] == 1 and nums[i+1] == 2 and nums[i+2] == 3:
+    for i in range(len(nums) - 2):
+        if nums[i] == 1 and nums[i + 1] == 2 and nums[i + 2] == 3:
             return True
     return False
+
 
 """
 
@@ -135,6 +152,8 @@ string_match('xxcaazz', 'xxbaaz') → 3
 string_match('abc', 'abc') → 2
 string_match('abc', 'axc') → 0
 """
+
+
 def string_match(a, b):
     if len(a) < len(b):
         shorter = a
@@ -142,13 +161,11 @@ def string_match(a, b):
     else:
         shorter = b
         longer = a
-  
+
     count = 0
-  
-    for i in range(len(shorter)-1):
-        if shorter[i:i+2] == longer[i:i+2]:
+
+    for i in range(len(shorter) - 1):
+        if shorter[i : i + 2] == longer[i : i + 2]:
             count += 1
-  
+
     return count
-
-

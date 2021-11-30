@@ -11,12 +11,12 @@ sleep_in(True, False) → False
 sleep_in(False, True) → True'
 """
 
+
 def sleep_in(weekday, vacation):
     if not weekday or vacation:
         return True
     else:
         return False
-
 
 
 """
@@ -28,6 +28,8 @@ monkey_trouble(True, True) → True
 monkey_trouble(False, False) → True
 monkey_trouble(True, False) → False
 """
+
+
 def monkey_trouble(a_smile, b_smile):
     if a_smile and b_smile:
         return True
@@ -35,7 +37,6 @@ def monkey_trouble(a_smile, b_smile):
         return True
     else:
         return False
-
 
 
 """
@@ -47,11 +48,11 @@ sum_double(3, 2) → 5
 sum_double(2, 2) → 8
 """
 
-def sum_double(a, b):
-    if a==b:
-        return (a+b)*2
-    return a+b
 
+def sum_double(a, b):
+    if a == b:
+        return (a + b) * 2
+    return a + b
 
 
 """
@@ -62,14 +63,14 @@ diff21(19) → 2
 diff21(10) → 11
 diff21(21) → 0
 """
+
+
 def diff21(n):
-    if n<=21:
-        return 21-n
+    if n <= 21:
+        return 21 - n
     else:
-        return (n-21)*2
+        return (n - 21) * 2
 
-
-  
 
 """
 We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. 
@@ -80,8 +81,10 @@ parrot_trouble(True, 6) → True
 parrot_trouble(True, 7) → False
 parrot_trouble(False, 6) → False
 """
+
+
 def parrot_trouble(talking, hour):
-    if hour<7 or hour>20:
+    if hour < 7 or hour > 20:
         if talking:
             return True
     return False
@@ -95,10 +98,11 @@ makes10(9, 10) → True
 makes10(9, 9) → False
 makes10(1, 9) → True
 """
-def makes10(a, b):
-#  return (a==10 or b==10) or ((a+b)==10)
-    return (a==10 or b==10 or (a+b)==10)
 
+
+def makes10(a, b):
+    #  return (a==10 or b==10) or ((a+b)==10)
+    return a == 10 or b == 10 or (a + b) == 10
 
 
 """
@@ -109,8 +113,10 @@ near_hundred(93) → True
 near_hundred(90) → True
 near_hundred(89) → False
 """
+
+
 def near_hundred(n):
-    return (n>=90 and n<=110) or (n>=190 and n<=210)
+    return (n >= 90 and n <= 110) or (n >= 190 and n <= 210)
 
 
 """
@@ -122,14 +128,15 @@ pos_neg(1, -1, False) → True
 pos_neg(-1, 1, False) → True
 pos_neg(-4, -5, True) → True
 """
+
+
 def pos_neg(a, b, negative):
     if negative:
-        return a<0 and b<0
+        return a < 0 and b < 0
     else:
-        return ((a<0 and b>0) or (b<0 and a>0))
+        return (a < 0 and b > 0) or (b < 0 and a > 0)
 
 
-   
 """
 Given a string, return a new string where "not " has been added to the front. 
 However, if the string already begins with "not", return the string unchanged.
@@ -139,12 +146,13 @@ not_string('candy') → 'not candy'
 not_string('x') → 'not x'
 not_string('not bad') → 'not bad'
 """
+
+
 def not_string(str):
-    if str[0:3]=="not":
+    if str[0:3] == "not":
         return str
     else:
-        return "not "+str
-
+        return "not " + str
 
 
 """
@@ -156,9 +164,10 @@ missing_char('kitten', 1) → 'ktten'
 missing_char('kitten', 0) → 'itten'
 missing_char('kitten', 4) → 'kittn'
 """
-def missing_char(str, n):
-    return str[0:n]+str[n+1:len(str)]
 
+
+def missing_char(str, n):
+    return str[0:n] + str[n + 1 : len(str)]
 
 
 """
@@ -169,11 +178,13 @@ front_back('code') → 'eodc'
 front_back('a') → 'a'
 front_back('ab') → 'ba'
 """
+
+
 def front_back(str):
     if len(str) <= 1:
         return str
     else:
-        return str[len(str)-1]+str[1:len(str)-1]+str[0]
+        return str[len(str) - 1] + str[1 : len(str) - 1] + str[0]
 
 
 """
@@ -187,13 +198,10 @@ front3('Chocolate') → 'ChoChoCho'
 front3('abc') → 'abcabcabc'
 """
 
+
 def front3(str):
     if len(str) < 3:
         front = str
     else:
         front = str[0:3]
-    return front+front+front
-
-
-
-
+    return front + front + front
